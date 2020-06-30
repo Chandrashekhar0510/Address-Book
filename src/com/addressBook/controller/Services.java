@@ -1,6 +1,7 @@
 package com.addressBook.model;
 
 import com.addressBook.model.PersonAddress;
+import com.addressBook.model.Person;
 import java.util.*;
 import java.lang.Comparable;
 import java.io.Serializable;
@@ -30,29 +31,21 @@ public class Services implements Serializable
                 if(newPer==null)
                 {
                         newPer=new Person();
-						//PersonAddress newAdd = new PersonAddress();
-                        //newPer.setAddress(new PersonAddress());
-
+						
                         System.out.print("FirstName:");
                         newPer.setFirstName(sc.next());
 
                         System.out.print("LastName:");
                         newPer.setLastName(sc.next());
 
-                        /*System.out.print("Address Line1 :");
-                        newPer.getAddress().setAddressLine1(sc.next());
-
-                        System.out.print("Address Line2 :");
-                        newPer.getAddress().setAddressLine2(sc.next());
-
-                        */System.out.print("City:");
-                        newAdd.getCity();//.setCity(sc.next());
+                        System.out.print("City:");
+                        newAdd.getCity();
 
                         System.out.print("State:");
-                        newAdd.getState();//Address().setState(sc.next());
+                        newAdd.getState();
 
                         System.out.print("Zip:");
-                        newAdd.getZip();//Address().setZip(sc.nextLong());
+                        newAdd.getZip();
 			
 			 System.out.print("Phone Number:");
                         newPer.setPhoneNumber(sc.next());
@@ -69,13 +62,7 @@ public class Services implements Serializable
                 editPer = this.getPersonFromList(fName);
                 if(editPer!=null)
                 {
-                        /*System.out.println("New Address Line1");
-                        editPer.getAddress().setAddressLine1(sc.next());
-
-                        System.out.println("New Address Line2");
-                        editPer.getAddress().setAddressLine2(sc.next());
-
-                        */System.out.println("New City");
+                        System.out.println("New City");
                         newAdd.setCity(sc.next());
 
                         System.out.println("New State");
@@ -121,11 +108,6 @@ public class Services implements Serializable
         {
                 this.personList.sort(Comparator.comparing(e -> e.getLastName().toLowerCase()));
         }
-
-        /*public void sortByZipCode()
-        {
-                Collections.sort(this.personList);
-        }*/
 
         public Person getPersonFromList(String name)
         {
