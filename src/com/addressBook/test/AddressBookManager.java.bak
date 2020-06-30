@@ -84,7 +84,7 @@ public class AddressBookManager
 
         }
 
-	public static void main(String args[]) throws IOException, ClassNotFoundException 
+	public static void main(String args[]) throws IOException, ClassNotFoundException	 
         {
 
                 try
@@ -117,8 +117,6 @@ public class AddressBookManager
                                                                         break;
                                                                         case 5 : myManager.getcurrentAddressBook().sortByLastName();
                                                                         break;
-                                                                       // case 6 : myManager.getcurrentAddressBook().sortByZipCode();
-                                                                        //break;
                                                                         case 7 :  myManager.getcurrentAddressBook().printAddressBookList();
                                                                         break;
                                                                         case 8 :
@@ -128,6 +126,9 @@ public class AddressBookManager
                                                                 }
 
                                                         }
+										default:
+												System.out.println("Wrong Entry...");
+												break;
                                 }
                         }
 

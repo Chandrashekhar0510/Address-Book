@@ -8,12 +8,14 @@ public class Person //implements Comparable<Person>,Serializable
         private static final long serialVersionUID = 1L;
         String firstName;
         String lastName;
+        //Address address;
         String phoneNumber;
                 Person(){}
-                Person(String firstName, String lastName,String phoneNumber)
+                Person(String firstName, String lastName,/*Address address,*/ String phoneNumber)
                 {
                         this.firstName = firstName;
                         this.lastName = lastName;
+                        //this.address = address;
                         this.phoneNumber = phoneNumber;
                 }
 
@@ -37,7 +39,16 @@ public class Person //implements Comparable<Person>,Serializable
                          this.lastName = lastName;
                }
 
-                
+                /*public Address getAddress()
+                {
+                        return this.address;
+                }
+
+
+                public void setAddress(Address address)
+                {
+                        this.address = address;
+                }*/
 
                 public String getPhoneNumber()
                 {
@@ -51,7 +62,20 @@ public class Person //implements Comparable<Person>,Serializable
 
                 public String toString()
                 {
-                        return this.firstName +" "+ this.lastName +"\n"+ this.phoneNumber ;
+                        return this.firstName +" "+ this.lastName +"\n"+ this.phoneNumber /*+"\n"+ this.address.toString()*/;
                 }
 
+               /* public int compareTo(Person person)
+                {
+                        if(this.address.getZip() > person.address.getZip())
+                        {
+                                return 1;
+                        }
+                        if(this.address.getZip() < person.address.getZip())
+                        {
+                                return -1;
+                        }
+                        return 0;
+
+                }*/
 }

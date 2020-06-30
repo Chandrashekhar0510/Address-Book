@@ -22,18 +22,18 @@ public class AddressBookManager
                 return this.currentAddressBook;
         }
 
-        public void newAddressBook(String addressBookName) throws IOException
+        public void newAddressBook(String bName) throws IOException
         {
-                currentAddressBook = new Services(addressBookName);
-                file = new File("./" + addressBookName);
-                System.out.println(addressBookName +":New File created successfully");
+                currentAddressBook = new Services(BName);
+                file = new File("./" + BName);
+                System.out.println(BName +":New File created successfully");
         }
 
-	public void openAddressBook(String addressBookName) throws Exception
+	public void openAddressBook(String BName) throws Exception
         {
-                currentAddressBook =  new Services(addressBookName);
-                file = new File("./"+ addressBookName);
-                inputStream = new FileInputStream(addressBookName);
+                currentAddressBook =  new Services(BName);
+                file = new File("./"+ BName);
+                inputStream = new FileInputStream(BName);
                 objInStrm = new ObjectInputStream(inputStream);
                 boolean count = true;
                 while(count)
@@ -117,8 +117,6 @@ public class AddressBookManager
                                                                         break;
                                                                         case 5 : myManager.getcurrentAddressBook().sortByLastName();
                                                                         break;
-                                                                       // case 6 : myManager.getcurrentAddressBook().sortByZipCode();
-                                                                        //break;
                                                                         case 7 :  myManager.getcurrentAddressBook().printAddressBookList();
                                                                         break;
                                                                         case 8 :
@@ -128,6 +126,9 @@ public class AddressBookManager
                                                                 }
 
                                                         }
+										default:
+												System.out.println("Wrong Entry...");
+												break;
                                 }
                         }
 
