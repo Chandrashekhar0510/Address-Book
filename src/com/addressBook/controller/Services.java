@@ -1,7 +1,8 @@
-package com.addressBook.model;
+package com.addressBook.controller;
 
 import com.addressBook.model.PersonAddress;
 import com.addressBook.model.Person;
+
 import java.util.*;
 import java.lang.Comparable;
 import java.io.Serializable;
@@ -32,22 +33,22 @@ public class Services implements Serializable
                 {
                         newPer=new Person();
 						
-                        System.out.print("FirstName:");
+                        System.out.print("First Name : ");
                         newPer.setFirstName(sc.next());
 
-                        System.out.print("LastName:");
+                        System.out.print("Last Name : ");
                         newPer.setLastName(sc.next());
 
-                        System.out.print("City:");
+                        System.out.print("City : ");
                         newAdd.getCity();
 
-                        System.out.print("State:");
+                        System.out.print("State : ");
                         newAdd.getState();
 
-                        System.out.print("Zip:");
+                        System.out.print("Zip : ");
                         newAdd.getZip();
 			
-			 System.out.print("Phone Number:");
+						System.out.print("Phone Number : ");
                         newPer.setPhoneNumber(sc.next());
 
                 }
@@ -62,19 +63,19 @@ public class Services implements Serializable
                 editPer = this.getPersonFromList(fName);
                 if(editPer!=null)
                 {
-                        System.out.println("New City");
+                        System.out.println("New City : ");
                         newAdd.setCity(sc.next());
 
-                        System.out.println("New State");
+                        System.out.println("New State : ");
                         newAdd.setState(sc.next());
 
-                        System.out.println("New Zip");
+                        System.out.println("New Zip : ");
                         newAdd.setZip(sc.nextInt());
 
-                        System.out.println("New Phone Number");
+                        System.out.println("New Phone Number : ");
                         editPer.setPhoneNumber(sc.next());
 
-                        System.out.println("Update Successfully!!");
+                        System.out.println("Update Successfully...");
                         return;
 
                 }
@@ -83,13 +84,13 @@ public class Services implements Serializable
 
 	 public void deletePerson(Person editPer)
         {
-                System.out.println("Enter the first name of person to delete :");
+                System.out.println("Enter the first name of person to delete : ");
                 String fName = sc.next();
                 editPer = this.getPersonFromList(fName);
                 if(editPer!=null)
                 {
                         this.personList.remove(editPer);
-                                System.out.println("Deleted Successfully");
+                                System.out.println("Deleted Successfully...");
                                 return;
 
                 }

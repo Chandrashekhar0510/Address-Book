@@ -7,7 +7,7 @@ import com.addressBook.model.Services;
 import java.util.*;
 import java.io.*;
 
-public class AddressBookManager
+public class ABManage
 {
         static Scanner userScanner = new Scanner(System.in);
         File file = null;
@@ -22,18 +22,18 @@ public class AddressBookManager
                 return this.currentAddressBook;
         }
 
-        public void newAddressBook(String addressBookName) throws IOException
+        public void newAddressBook(String bName) throws IOException
         {
-                currentAddressBook = new Services(addressBookName);
-                file = new File("./" + addressBookName);
-                System.out.println(addressBookName +":New File created successfully");
+                currentAddressBook = new Services(bName);
+                file = new File("./" + bName);
+                System.out.println(bName +":New File created successfully");
         }
 
-	public void openAddressBook(String addressBookName) throws Exception
+	public void openAddressBook(String bName) throws Exception
         {
-                currentAddressBook =  new Services(addressBookName);
-                file = new File("./"+ addressBookName);
-                inputStream = new FileInputStream(addressBookName);
+                currentAddressBook =  new Services(bName);
+                file = new File("./"+ bName);
+                inputStream = new FileInputStream(bName);
                 objInStrm = new ObjectInputStream(inputStream);
                 boolean count = true;
                 while(count)
@@ -73,9 +73,8 @@ public class AddressBookManager
                 System.out.println("3. Delete Person");
                 System.out.println("4.Sort By First Name");
                 System.out.println("5.Sort By Last Name");
-                System.out.println("6. Sort By Zip Code");
-                System.out.println("7. Print all enteries");
-                System.out.println("8. Exit to file Menu");
+                System.out.println("6. Print all enteries");
+                System.out.println("7. Exit to file Menu");
                 System.out.println("===================================================================");
                 System.out.println();
                 System.out.println("Enter your choice");
@@ -89,7 +88,7 @@ public class AddressBookManager
 
                 try
                 {
-                        AddressBookManager myManager = new AddressBookManager();
+                        ABManage myManager = new ABManage();
                         String inputAddressBookName = null;
                         while(true)
                         {
@@ -117,9 +116,9 @@ public class AddressBookManager
                                                                         break;
                                                                         case 5 : myManager.getcurrentAddressBook().sortByLastName();
                                                                         break;
-                                                                        case 7 :  myManager.getcurrentAddressBook().printAddressBookList();
+                                                                        case 6 :  myManager.getcurrentAddressBook().printAddressBookList();
                                                                         break;
-                                                                        case 8 :
+                                                                        case 7 :
                                                                         break outerloop;
 
 
